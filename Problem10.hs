@@ -1,7 +1,7 @@
 -- Compile for best results -o
 
 main  = do
-  print $ primeGenerator
+  print $ primeSumGenerator
 
 -- The functions primes and isprime are taken from this implementation of
 -- the Sieve of Eratosthenes https://www.cs.hmc.edu/~oneill/papers/Sieve-JFP.pdf
@@ -15,4 +15,4 @@ isprime x = all (\p -> x `mod` p > 0) (factorsToTry x)
     factorsToTry x = takeWhile (\p -> p * p <= x) primes
 
 
-primeGenerator = sum $ takeWhile (<1999999) primes
+primeSumGenerator = sum $ takeWhile (<1999999) primes
